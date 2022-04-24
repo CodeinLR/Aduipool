@@ -1,21 +1,44 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script>var sideBar = document.getElementById("mobile-nav");
-  var toggler = document.getElementById("mobile-toggler");
-  sideBar.style.transform = "translateX(-260px)";
-  let moved = true;
-  
-  function sidebarHandler() {
-      if (moved) {
-          sideBar.style.transform = "translateX(0px)";
-          moved = false;
-      } else {
-          sideBar.style.transform = "translateX(-260px)";
-          moved = true;
-      }
+
+<script>function dropdownHandler(element) {
+  let single = element.getElementsByTagName("ul")[0];
+  single.classList.toggle("hidden");
+}
+function MenuHandler(el, val) {
+  let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+  let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+  let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+  if (val) {
+      MainList.classList.remove("hidden");
+      el.classList.add("hidden");
+      closeIcon.classList.remove("hidden");
+  } else {
+      showIcon.classList.remove("hidden");
+      MainList.classList.add("hidden");
+      el.classList.add("hidden");
   }
-  </script>
+}
+function searchHandler(element) {
+  let Input = element.parentElement.getElementsByTagName("input")[0];
+  Input.classList.toggle("w-0");
+}
+// ------------------------------------------------------
+let sideBar = document.getElementById("mobile-nav");
+let menu = document.getElementById("menu");
+let cross = document.getElementById("cross");
+const sidebarHandler = (check) => {
+  if (check) {
+      sideBar.style.transform = "translateX(0px)";
+      menu.classList.add("hidden");
+      cross.classList.remove("hidden");
+  } else {
+      sideBar.style.transform = "translateX(-100%)";
+      menu.classList.remove("hidden");
+      cross.classList.add("hidden");
+  }
+};</script>
 
 {{ $styles := resources.Get "/css/style.css" | postCSS }}
 
