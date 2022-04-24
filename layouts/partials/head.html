@@ -1,6 +1,21 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>var sideBar = document.getElementById("mobile-nav");
+  var toggler = document.getElementById("mobile-toggler");
+  sideBar.style.transform = "translateX(-260px)";
+  let moved = true;
+  
+  function sidebarHandler() {
+      if (moved) {
+          sideBar.style.transform = "translateX(0px)";
+          moved = false;
+      } else {
+          sideBar.style.transform = "translateX(-260px)";
+          moved = true;
+      }
+  }
+  </script>
 
 {{ $styles := resources.Get "/css/style.css" | postCSS }}
 
