@@ -1,3 +1,18 @@
-public
-.DS_STORE
-node_modules
+# IDE specific
+.idea/
+.vscode/
+
+# Node
+node_modules/
+
+# Hugo
+.hugo_build.lock
+go.sum
+resources/
+public/
+
+# Mac
+.DS_Store
+
+# Test
+test/go.sum
