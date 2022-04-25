@@ -1,12 +1,12 @@
 ---
-title: "H1 de la page ;) "
+title: "tuto2"
 date: 2021-12-18T11:10:36+08:00
 draft: false
 language: fr
-description: A test with @tailwindcss/typography & Prose
+description: le tuto2
 ---
-## Hello
-## A Test with Tailwind Prose Classes   
+## Hello voici le tuto 2
+## l'inventaire automatique 
 
 loremloremloremloremloremloremloremloremloremlorem
 loremloremloremloremloremloremloremloremloremloremlorem
