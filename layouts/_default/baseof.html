@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Language.Lang }}">
+<html lang="{{ .Language.Lang }}" class="">
 
     <head>
 
@@ -9,15 +9,14 @@
 
              {{ partial "nav.html" . }}
         
-    <body class="h-screen">
+    <body class="h-screen flex flex-col">
        
             {{ partial "header.html" . }}
             
             {{ block "main" . }}{{ end }}
 
     </body>
-        </div>
-    </div>
+      
              {{ partial "footer.html" . }}
 
 </html>
