@@ -5,12 +5,18 @@ disableKinds = ["taxonomy","taxonomyTerm"]
 summaryLength = 70
 
 [[menu.main]]
-  name = "Accueil"
-  url = "/"
+  identifier = 'Accueil'
+  name = 'Accueil'
+  title = 'page accueil'
+  url = '/'
+  weight = -115
 
 [[menu.main]]
-  name = "A propos"
-  url = "/nous"
+   identifier = 'nous'
+  name = 'A propos'
+  title = 'nous '
+  url = '/nous'
+  weight = -112
 
 [[menu.main]]
   name = "Projets"
@@ -21,8 +27,12 @@ summaryLength = 70
   url = "/tutoriels"
 
 [[menu.main]]
-  name = "Blog"
-  url = "/blog"
+  identifier = 'blog'
+  name = 'Blog'
+  title = 'blog section'
+  url = '/blog/'
+  weight = -110
+
 
 [[menu.social]]
 name = "GitHub"
