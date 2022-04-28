@@ -6,26 +6,26 @@
 				<div>
 					<!-- Website Logo -->
 					<a href="#" class="flex items-center py-4 px-2">
-						<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">
+						<img src="images/arduinologo.png" alt="Logo" title="{{ .Site.Title }}" class="h-8 w-8 mr-2">
 					</a>
 				</div>
 				<!-- Primary Navbar items -->
 				<div class="hidden md:flex items-center space-x-1">
-					<a href="" class="py-4 px-2 text-white border-b-4 border-teal-500 font-semibold ">Home</a>
-					<a href="" class="py-4 px-2 text-white  font-semibold hover:text-teal-500 transition duration-300">Services</a>
-					<a href="" class="py-4 px-2 text-white  font-semibold hover:text-teal-500 transition duration-300">About</a>
-					<a href="" class="py-4 px-2 text-white  font-semibold hover:text-teal-500 transition duration-300">Contact Us</a>
+					{{ range .Site.Menus.main }}
+					<a href="{{ .URL }}" class="py-4 px-2 text-white active:border-b-4 border-teal-500 font-semibold ">{{ .Name }}</a>
+					{{ end }}
 				</div>
 			</div>
 			<!-- Secondary Navbar items -->
 			<div class="hidden md:flex items-center space-x-3 ">
-				<a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-teal-300 hover:text-white transition duration-300">Log In</a>
-				<a href="" class="py-2 px-2 font-medium text-white bg-teal-100 rounded hover:bg-teal-400 transition duration-300">Sign Up</a>
+				{{ range .Site.Menus.social }}
+				<a href="{{ .URL }}" title="{{ .Name }}" class=" py-2 px-2 font-medium text-gray-500 rounded hover:bg-teal-300 hover:text-white transition duration-300">{{ .Pre }}</a>
+				{{ end }}
 			</div>
 			<!-- Mobile menu button -->
 			<div class="md:hidden flex items-center">
 				<button class="outline-none mobile-menu-button">
-				<svg class=" w-6 h-6 text-gray-500 hover:text-teal-500 "
+				<svg class=" w-6 h-6 text-white hover:text-teal-500 "
 					x-show="!showMenu"
 					fill="none"
 					stroke-linecap="round"
@@ -42,11 +42,23 @@
 	</div>
 	<!-- mobile menu -->
 	<div class="hidden mobile-menu">
+
 		<ul class="">
-			<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-teal-500 font-semibold">Home</a></li>
-			<li><a href="#services" class="block text-sm px-2 py-4 hover:bg-teal-200 transition duration-300">Services</a></li>
-			<li><a href="#about" class="block text-sm px-2 py-4 hover:bg-teal-200 transition duration-300">About</a></li>
-			<li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-teal-200 transition duration-300">Contact Us</a></li>
+			{{ range .Site.Menus.main }}
+		<li>		
+
+			<a href="{{ .URL }}" class="block text-sm text-center px-2 py-4 hover:bg-teal-200 text-white hover:text-gray-500 transition duration-300">{{ .Name }}</a>
+			
+		</li>
+		 {{ end }}
+		
+		</ul>
+		<ul>
+			<li class=" p-2">
+				{{ range .Site.Menus.social }}
+				<a href="{{ .URL }}" title="{{ .Name }}" class="p-2 font-medium text-gray-100 rounded hover:text-teal-300 transition duration-300">{{ .Pre }}</a>
+				{{ end }}
+			</li>
 		</ul>
 	</div>
 	<script>

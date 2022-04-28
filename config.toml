@@ -5,6 +5,18 @@ disableKinds = ["taxonomy","taxonomyTerm"]
 summaryLength = 70
 
 [[menu.main]]
+  name = "Accueil"
+  url = "/"
+
+[[menu.main]]
+  name = "A propos"
+  url = "/nous"
+
+[[menu.main]]
+  name = "Projets"
+  url = "/projets"
+
+[[menu.main]]
   name = "Tutoriels"
   url = "/tutoriels"
 
